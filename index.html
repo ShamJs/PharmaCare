@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaCare</title>
+    <link rel="icon" href="icon.png">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="layout">
+        <aside>
+            <div id="logo">
+                <img src="icon.png" alt="">
+                <div id="logo-text">
+                    <h1>PharmaCare</h1>
+                    <p>Smart Pharmacy</p>
+                </div>
+            </div>
+            <br>
+            <nav>
+                <a href="" class="active">
+                    <i class="fa-solid fa-chart-line"></i>
+                    Dashboard
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-capsules"></i>
+                    Medicines
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                    Inventory
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-cart-plus"></i>
+                    Sales(POS)
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-cart-arrow-down"></i>
+                    Purchases
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-truck"></i>
+                    Suppliers
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-user-group"></i>
+                    Customers
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-file-waveform"></i>
+                    Prescriptions
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-newspaper"></i>
+                    Reports
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-user-tie"></i>
+                    Employees
+                </a>
+                <a href="notifications.html">
+                    <i class="fa-solid fa-bell"></i>
+                    Notifications
+                </a>
+                <a href="">
+                    <i class="fa-solid fa-gears"></i>
+                    Settings
+                </a>
+            </nav>
+            <a href="" class="logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Log out
+            </a>
+        </aside>
+        <div class="content">
+            <header>
+                <div id="head">
+                    <button id="menu-button">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <div id="search-button">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="search" id="search-input" placeholder="Search medicines, customers, invoices...">
+                        <span id="clear-search">×</span>
+                    </div>
+                    <div id="head-actions">
+                        <div id="notification-box">
+                            <button id="notification">
+                                <i class="fa-regular fa-bell"></i>
+                                <span id="notification-count"></span>
+                            </button>
+                            <div id="notifications-menu">No Notifications</div>
+                        </div>
+                    <button id="date">
+                        <span id="current-date"></span>
+                        <i class="fa-regular fa-calendar"></i>
+                    </button>
+                    </div>
+                    <div id="user-box">
+                    <div id="user">
+                        <img src="user.png" alt="User" id="img">
+                        <div id="user-info">
+                            <p>Sham</p>
+                            <p>Pharmacist</p>
+                        </div>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <div id="user-menu">
+                        <a href="#">Profile</a>
+                        <a href="settings.html">Settings</a>
+                        <a href="#">Log out</a>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="welcome">
+                    <h1>Welcome back 👋</h1>
+                    <p>Here's what's happening in your pharmacy today.</p>
+                </section>
+                <section class="summary-cards">
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-chart-column"></i>
+                        </div>
+                        <div class="card-info">
+                            <p>Today's Sales</p>
+                            <h2 id="today-sales"></h2>
+                            <span id="sales-change"></span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-capsules"></i>
+                        </div>
+                        <div class="card-info">
+                            <p>Total Medicines</p>
+                            <h2 id="total-medicines"></h2>
+                            <span id="medicine-categories"></span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+                        <div class="card-info">
+                            <p>Low Stock Items</p>
+                            <h2 id="low-stock-items"></h2>
+                            <span id="stock-status"></span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="card-info">
+                            <p>Total Customers</p>
+                            <h2 id="total-customers"></h2>
+                            <span id="customers-change"></span>
+                        </div>
+                    </div>
+                    <div class="summary-card">
+                        <div class="card-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <div class="card-info">
+                            <p>Total Revenue</p>
+                            <h2 id="total-revenue"></h2>
+                            <span id="revenue-change"></span>
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-panels">
+    <!-- Sales Overview -->
+                    <div class="dashboard-panel sales-overview">
+                        <div class="panel-header">
+                            <h3>Sales Overview</h3>
+                            <div class="period-dropdown">
+                                <button class="period-button" id="period-button">
+                                    <span id="selected-period">This Week</span>
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </button>
+                                <div class="period-menu" id="period-menu">
+                                    <button>Today</button>
+                                    <button class="selected">This Week</button>
+                                    <button>This Month</button>
+                                    <button>This Year</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chart-area">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+    <!-- Sales by Category -->
+                    <div class="dashboard-panel sales-category">
+                        <div class="panel-header">
+                            <h3>Sales by Category</h3>
+                        </div>
+                        <div class="category-area">
+                            <canvas id="categoryChart"></canvas>
+                        </div>
+                    </div>
+    <!-- Notifications -->
+                    <div class="dashboard-panel dashboard-notifications">
+                        <div class="panel-header">
+                            <h3>Notifications</h3>
+                            <a href="notifications.html">View all</a>
+                        </div>
+                        <div class="notification-list">
+            <!-- الإشعارات الحقيقية ستأتي لاحقاً من Backend -->
+                        </div>
+                    </div>
+                </section>
+                <section class="dashboard-tables">
+    <!-- Low Stock Medicines -->
+                    <div class="dashboard-table">
+                        <div class="table-header">
+                            <h3>Low Stock Medicines</h3>
+                            <a href="#">View all</a>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Medicine Name</th>
+                                        <th>Category</th>
+                                        <th>Current Stock</th>
+                                        <th>Min. Stock</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="low-stock-table">
+                    <!-- البيانات ستأتي لاحقاً من Backend -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+    <!-- Recent Sales -->
+                    <div class="dashboard-table">
+                        <div class="table-header">
+                            <h3>Recent Sales</h3>
+                            <a href="#">View all</a>
+                        </div>
+                        <div class="table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Invoice</th>
+                                        <th>Customer</th>
+                                        <th>Amount</th>
+                                        <th>Time</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recent-sales-table">
+                    <!-- البيانات ستأتي لاحقاً من Backend -->
+                                </tbody>
+                            </table>
+                        </div> 
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>    
+    <script src="node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
