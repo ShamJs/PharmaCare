@@ -44,7 +44,7 @@ aside:hover::-webkit-scrollbar {
     flex-shrink: 0;
 }
 #logo-text h1 {
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: clamp(10px, 1.3vw, 16px);
     color: rgb(20, 20, 167);
 }
 #logo-text {
