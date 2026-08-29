@@ -87,12 +87,13 @@ document.addEventListener("click", function(event) {
 });
 const menuButton = document.getElementById("menu-button");
 const sidebar = document.querySelector("aside");
+
 menuButton.addEventListener("click", function () {
-    if (window.innerWidth > 900) {
-        sidebar.classList.toggle("hide");
-    } else {
+
+    if (window.innerWidth <= 900) {
         sidebar.classList.toggle("show");
     }
+
 });
 document.addEventListener("click", function(event) {
 
@@ -110,6 +111,7 @@ window.addEventListener("resize", function () {
 
     if (window.innerWidth > 900) {
         sidebar.classList.remove("show");
+        sidebar.classList.remove("hide");
     }
 
 });
